@@ -28,16 +28,18 @@ class BST:
 
     def traverseInOrder(self,root):
         if root is not None:
-            self.traversePreOrder(root.left)
+            self.traverseInOrder(root.left)
             self.visitNode(root)
-            self.traversePreOrder(root.right)
+            self.traverseInOrder(root.right)
 
 if __name__ == '__main__':
     bst = BST()
-    node = BNode(6)
-    bst.insert(1,node)
+    node = BNode(5)
+    bst.insert(12,node)
+    bst.insert(9, node)
+    bst.insert(32, node)
+    bst.insert(19, node)
     bst.insert(2, node)
-    bst.insert(3, node)
-    bst.insert(4, node)
+    bst.insert(16, node)
     bst.traversePreOrder(node)
     bst.traverseInOrder(node)
